@@ -1,0 +1,14 @@
+# Editor junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build files
+dist/
+build/
+
+# Node modules (future proof)
+node_modules/
+
+# Environment configs
+.env
