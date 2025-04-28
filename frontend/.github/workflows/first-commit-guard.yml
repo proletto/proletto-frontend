@@ -1,0 +1,10 @@
+name: First Commit Guard
+on: [push]
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Warn on system junk
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -E '\.vscode/|AppData/'; then echo "Warning: System files detected!"; fi

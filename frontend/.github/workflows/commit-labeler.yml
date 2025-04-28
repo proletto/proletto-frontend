@@ -1,0 +1,9 @@
+name: Commit Labeler
+on: [push]
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Label commits
+        run: echo "Labeling commits triggered."
