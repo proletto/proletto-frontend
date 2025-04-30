@@ -8,14 +8,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # ✅ Give permission to push changes
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Commit Changes from push/
+      - name: Commit and Push Changes from push/
         run: |
           git config user.name "proletto-bot"
           git config user.email "ai@proletto.com"
           git add push/
           git commit -m "feat: AI sync from push folder" || echo "No changes to commit"
-          git push origin main
+          git push
